@@ -1,0 +1,480 @@
+source: /
+paths:
+  uploads: uploads
+  data: _data
+  layouts: _layouts
+  includes: _includes
+collections_config:
+  posts:
+    schemas:
+      default:
+        path: /.cloudcannon/schemas/blog-post.md
+    path: _posts
+    output: true
+    icon: notes
+    create:
+      path: >-
+        [relative_base_path]/{date|year}-{date|month}-{date|day}-{title|slugify}.[ext]
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    _inputs:
+      title:
+        label: Titel
+        comment: Indlæggets titel
+      description:
+        label: Beskrivelse
+        comment: Kort beskrivelse af indlægget
+      category:
+        label: Katgeori
+      podcast-id:
+        label: Podcast ID (Kun hvis kategori er podcast)
+        comment: Podcast afsnittets unikke id (Du finder det i Spodify linket til podcasten)
+      video:
+        label: Video (Kun hvis kategori er video)
+        comment: Sti til videoen
+        type: file
+      subs:
+        label: Undertekster (Kun hvis kategori er video)
+        comment: Sti til underteksterne
+        type: file
+      image:
+        label: Billede
+      published:
+        label: Publiceret
+        type: switch
+  events:
+    schemas:
+      default:
+        path: /.cloudcannon/schemas/event.md
+    path: _events
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    _inputs:
+      title:
+        label: Titel
+        comment: Eventets titel
+      subtitle:
+        label: Undetitel
+      image:
+        label: Billede
+      date:
+        label: Dato
+        type: date
+      infomode:
+        label: Er eventet et infomøde?
+        type: switch
+      infomode-link:
+        label: Hvilken uddannelse er infomødet for? (Kun hvis Infomøde er slået til)
+        type: select
+        options:
+          values: collections.educations
+      billetto:
+        label: Kan man tilmelde sig via Billetto?
+        type: switch
+      billetto-nr:
+        label: Billetto ID (Kun hvis Billetto er slået til)
+        comment: Billetto event unik ID. Du kan finde det i billettos kontrolpanel.
+      price:
+        label: Pris
+      place:
+        label: lokation
+      time:
+        label: Tid
+        type: text
+      published:
+        label: Publiceret
+        type: switch
+  employees:
+    schemas:
+      default:
+        path: /.cloudcannon/schemas/employee.md
+    path: _employees
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    _inputs:
+      title:
+        label: Navn
+      order:
+        label: Rækkefølge
+        type: number
+      description:
+        label: Titler/titel
+        comment: Diretør, konsulent osv.
+      image:
+        label: Billede
+      small-portrait-image:
+        label: Billede (Lille)
+      call:
+        label: Telefon nr.
+      meta-title:
+        label: Titel (Metadata)
+      email:
+        label: E-mailadresse
+      on-om-os:
+        label: Aktiveret på "Om os" side
+        type: switch
+      edu:
+        label: Uddannelser
+        type: array
+      edu[*]:
+        type: text
+      linkedin:
+        label: Linkedin link
+      redirect_from:
+        hidden: true
+      published:
+        label: Publiceret
+        type: switch
+  educations:
+    schemas:
+      default:
+        path: /.cloudcannon/schemas/education.md
+    path: _educations
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    _inputs:
+      order:
+        label: Rækefølge
+        type: number
+      title:
+        label: Titel
+        comment: Uddannelsens titel
+      undertitle:
+        label: Undertitel
+        comment: Ikke oblikatorisk
+      meta-title:
+        label: Titel (Metadata)
+      description:
+        label: Beskrivelse
+        type: textarea
+      meta-description:
+        label: Beskrivelse (Metadata)
+        type: textarea
+      aktive-hold:
+        label: Er der aktive hold?
+        type: switch
+      image:
+        label: Billede
+        comment: Baggrundsbilledet i headeren
+        type: image
+      image-2:
+        label: Billede 2
+        comment: Billede som ligger i anden kollonne øverst på siden under "Overblik" sektionen (Vises kun hvis der ikke er en video i "Overblik")
+        type: image
+      adgangskrav:
+        label: Adgangskrav
+        type: html
+      location:
+        label: Sted/lokation
+        type: html
+      contact-person:
+        label: Kontakt person
+        type: select
+        options:
+          values: collections.employees
+      price:
+        label: Pris
+        type: html
+      undervisere:
+        label: Undervisere
+        type: multiselect
+        options:
+          values: collections.employees
+      kort:
+        label: Kort
+        comment: Skal der ligge et kort under sted?
+      kort-kode:
+        label: Kort kode fra Google maps
+        type: textarea
+        comment: (Kun hvis Kort er slået til)
+      pdf:
+        label: PDF brochure
+        type: file
+      infomode:
+        label: Er der et kommende infomøde om kurset/uddannelsen?
+        type: switch
+      kollonne-1:
+        label: Kollonne 1
+        comment: Tekst i kollonne 1 i Oversigt
+        type: html
+      kollonne-2:
+        label: Kollonne 2
+        comment: Tekst i kollonne 2 i Oversigt
+        type: html
+      kollonne-2-billede-hojde:
+        label: Billedhøjde
+        comment: Højde på billed i kollonne 2 i Oversigt
+        type: select
+        options:
+          values: _select_data.hojder
+          value_key: key
+          preview:
+            text:
+              - key: display_name
+      op-kollonne-1:
+        label: Kollonne 1 (Opgybning sektion)
+        comment: Tekst i kollonne 1 i Opbygning
+        type: html
+      op-kollonne-2:
+        label: Kollonne 2 (Opgybning sektion)
+        comment: Tekst i kollonne 2 i Opbygning
+        type: html
+      op-kollonne-banner:
+        label: Banner (Opgybning sektion)
+        comment: Tekst i banneret i Opbygning
+        type: html
+      deltagerprofil:
+        label: Deltagerprofil beskrivelse
+        comment: Skal der vises en sektion med beskrivelse af deltagerprofil?
+        type: switch
+      dp-kollonne-1:
+        label: Kollonne 1 (Deltagerprofil sektion)
+        comment: Tekst i kollonne 1 i Deltagerprofil
+        type: html
+      dp-kollonne-2:
+        label: Kollonne 2 (Deltagerprofil sektion)
+        comment: Tekst i kollonne 2 i Deltagerprofil
+        type: html
+      anbefalinger:
+        label: Citater/testimonials
+        type: switch
+        comment: Skal der visis nogle citater/testimonials?
+      vidner:
+        type: array
+        label: Testimonials
+        options:
+          structures: _structures.vid
+      vidner[*].navn:
+        label: Navn
+        type: text
+      vidner[*].titel:
+        label: Titel/Stilling
+        type: text
+      vidner[*].text:
+        label: Tekst
+        type: html
+      date:
+        label: Dato
+        type: text
+      dates:
+        label: Datoer
+        type: text
+      name:
+        label: Navn/beskrivelse
+        type: text
+      modules:
+        label: Moduler/Dage
+      day:
+        label: Dag nr.
+        type: text
+      time:
+        label: Tid (Fra - til)
+        type: text
+      place:
+        label: Sted
+        type: text
+      aar:
+        label: År (Halvår)
+        comment: F.eks. Forår 2022
+        type: text
+      nested-hold:
+        type: array
+        label: Hold (Pr. år)
+        comment: Hold inddelt i år
+        options:
+          structures: _structures.aar-hold
+      nested-hold[*].hold:
+        label: Hold
+        type: array
+        options:
+          structures: _structures.hold
+      hold:
+        type: array
+        label: Hold
+        options:
+          structures: _structures.hold
+      hold[*].modules:
+        type: array
+        options:
+          structures: _structures.moduler
+      opbygning-image:
+        label: Billede i Opbygning sektion
+      galleri-overblik:
+        label: Galleri sektion
+        comment: Skal der være et galleri?
+        type: switch
+      galleri:
+        label: Galleri
+        type: array
+        options:
+          structures: _structures.gallery
+      galleri[*].text:
+        type: html
+        label: Tekst
+      galleri[*].image:
+        type: image
+        label: Billede
+      galleri[*].subtitle:
+        type: text
+        label: Undertitel
+      galleri[*].title:
+        type: text
+        label: Titel
+      redirect_from:
+        hidden: true
+      published:
+        label: Publiceret
+        type: switch
+  coachings:
+    path: _coachings
+    output: false
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  pages:
+    path: _pages
+    output: true
+    icon: notes
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: false
+    _inputs:
+      layout:
+        hidden: true
+      redirect_from:
+        hidden: true
+      image:
+        type: image
+        label: Billede
+      description:
+        label: Berskrivelse
+        type: html
+      meta-description:
+        label: Beskrivelse (SEO)
+        type: textarea
+      title:
+        label: Titel
+        type: text
+      meta-title:
+        label: Beskrivelse (SEO)
+        type: text
+      text:
+        label: Tekst
+        type: html
+      permalink:
+        hidden: true
+      podcast-heading:
+        label: Overskrift (Podcasts)
+        type: text
+      article-heading:
+        label: Overskrift (Blog)
+        type: text
+      video-heading:
+        label: Overskrift (Videoer)
+        type: text
+      publications-heading:
+        label: Overskrift (Udgivelser/Bøger)
+        type: text
+  texts:
+    path: _texts
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  publications:
+    path: _publications
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  landings:
+    path: _landings
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  consultings:
+    path: _consultings
+    output: true
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+_inputs:
+  categories:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+    cascade: true
+  tags:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+    cascade: true
+_select_data:
+  sass:
+    style: compressed
+  hojder:
+    - key: h-md-0
+      display_name: 0%
+    - key: h-md-25
+      display_name: 25%
+    - key: h-md-50
+      display_name: 50%
+    - key: h-md-75
+      display_name: 75%
+    - key: h-md-100
+      display_name: 100%
+  config:
+    - _config_cc.yml
+_structures:
+  gallery:
+    values:
+      - value:
+          image:
+          title:
+          subtitle:
+          text:
+  hold:
+    values:
+      - value:
+          title:
+          modules:
+  aar-hold:
+    values:
+      - value:
+          aar:
+          hold:
+  moduler:
+    values:
+      - value:
+          date:
+          day:
+          time:
+          name:
+          place:
+  vid:
+    values:
+      - value:
+          navn:
+          titel:
+          text:
+_editables: {}
+data_config: {}
+timezone: Europe/Copenhagen
