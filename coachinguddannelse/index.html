@@ -1076,7 +1076,7 @@
     }
     form.addEventListener("submit", handleSubmit)
   </script>
-<!--   <div style="
+  <!--   <div style="
   position: fixed;
   top: 90%;
   left: 50%;
@@ -1286,7 +1286,7 @@
 
   <script>
 
-$('.insp-responsive-pod').slick({
+    $('.insp-responsive-pod').slick({
       dots: true,
       infinite: true,
       speed: 300,
@@ -1430,6 +1430,29 @@ $('.insp-responsive-pod').slick({
       $(this).removeClass("hovered");
     });
     }); */
+  </script>
+
+  <!--  Cloudcannon -->
+
+  <script>
+    if (!window.CloudCannon) {
+      document.addEventListener('cloudcannon:load', function (e) {
+        onLiveEditorLoad(e.detail.CloudCannon);
+      });
+    } else {
+      onLiveEditorLoad(window.CloudCannon);
+    }
+    function onLiveEditorLoad(CloudCannon) {
+      CloudCannon.enableEvents();
+    }
+
+    document.addEventListener('cloudcannon:update', async function (e) {
+      useNewPageProps(e.detail.CloudCannon);
+    });
+
+    async function useNewPageProps(CloudCannon) {
+      const latestValue = await CloudCannon.value();
+    }
   </script>
 
 
@@ -1681,7 +1704,7 @@ $('.insp-responsive-pod').slick({
         }, 1);
       }
     }
-// shirt
+    // shirt
   </script>
 
   <script>
