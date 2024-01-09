@@ -2217,6 +2217,28 @@
     }
     form_udd.addEventListener("submit", handleSubmit)
 </script>
+
+<script>
+    document.addEventListener('cloudcannon:update', async function (e) {
+      // use new page props
+      const value = await CloudCannon.value();
+      
+      document.querySelector('h1').innerText = value.title;
+      
+      // remove all list elements, then re-add them
+      const staffList = document.querySelector('ul');
+      if (staffList && value.staff_members) {
+        while (staffList.firstChild) {
+          staffList.removeChild(staffList.firstChild);
+        }
+        for (const staff of value.staff_members) {
+          const staffElement = document.createElement('li');
+          staffElement.innerHTML = `${staff.name} - ${staff.position}`;
+          staffList.append(staffElement);
+        }
+      }
+    })
+  </script>
   <!--   <div style="
   position: fixed;
   top: 90%;
@@ -2575,26 +2597,17 @@
 
   <!--  Cloudcannon -->
 
-  <script>
-    if (!window.CloudCannon) {
-      document.addEventListener('cloudcannon:load', function (e) {
-        onLiveEditorLoad(e.detail.CloudCannon);
-      });
-    } else {
-      onLiveEditorLoad(window.CloudCannon);
-    }
-    function onLiveEditorLoad(CloudCannon) {
-      CloudCannon.enableEvents();
-    }
 
-    document.addEventListener('cloudcannon:update', async function (e) {
-      useNewPageProps(e.detail.CloudCannon);
-    });
+<script>
+  if (!window.CloudCannon) {
+    document.addEventListener('cloudcannon:load', function(e) {
+      e.detail.CloudCannon.enableEvents();
+    })  
+  } else {
+    window.CloudCannon.enableEvents();
+  }
+</script>
 
-    async function useNewPageProps(CloudCannon) {
-      const latestValue = await CloudCannon.value();
-    }
-  </script>
 
 
   <!-- Eventbrite overwrites-->
