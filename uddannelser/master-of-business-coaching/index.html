@@ -773,7 +773,7 @@
     <div class="small-container">
         <div id="overblik" class="anchor-delay"></div>
         <div class="row g-lg-5 g-3">
-            <div class="col-12 col-md-6">
+            <div id="kol-1" data-cms-bind="#kollonne-1" class="col-12 col-md-6">
                 <h4>Ledelse og coaching</h4><p>Ønsker du at blive dygtig til at føre produktive og virkningsfulde dialoger? At kunne flytte både grupper og individer i en mere konstruktiv retning og derved forebygge stress, organisatorisk stagnation og udbrændthed? Så vælg uddannelsen: MBC (Master of Business Coaching)</p><h4>Højeste internationale akkreditering</h4><p>Med en MBC får du en af landets bedste coachinguddannelser, hvor du både kan foretage traditionelle coachingsamtaler og den filosofiske samtale.</p><p>Med en MBC fra CCC er du garanteret de højeste, internationale standarder via vores akkreditering fra European Mentoring and Coaching Council (EMCC). <ins><a href="/emcc-akkreditering/">Læs om vores EMCC akkreditering her</a></ins>.</p>
             </div>
             <div class="col-12 col-md-6">
@@ -3546,6 +3546,7 @@
       
       document.querySelector('h1').innerText = value.title;
       document.getElementById("undertitle").innnerText = value.undertitle;
+      document.getElementById("kol-1").innnerText = value.kollonne-1;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');

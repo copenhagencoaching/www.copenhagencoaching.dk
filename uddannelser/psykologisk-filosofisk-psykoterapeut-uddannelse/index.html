@@ -780,7 +780,7 @@
     <div class="small-container">
         <div id="overblik" class="anchor-delay"></div>
         <div class="row g-lg-5 g-3">
-            <div class="col-12 col-md-6">
+            <div id="kol-1" data-cms-bind="#kollonne-1" class="col-12 col-md-6">
                 <h4>Dybere, højere og bredere beredskab</h4><p>Ideen, formålet og visionen med terapi-uddannelsen er at kombinere og kvalificere den filosofiske tradition med den psykologiske og psykoterapeutiske tradition. Uddannelsen tilbyder et dybere og bredere beredskab at møde sin klient/borger og sig selv med. Gennem psykologiske og filosofiske metoder og øvelser, teoretisk såvel som praktisk, dannes den kommende terapeut på denne uddannelse i at kunne møde det andet menneske som menneske og med-menneske.</p><h4>Den svære samtale</h4><p>Uddannelsens opbygning vil sikre, at man som terapeut vil være tryg ved at samtalen bevæger sig ind på langt de fleste livsområder. Disse kvalifikationer kan med fordel anvendes i forskellige pædagogiske og sociale sammenhænge, hvor man har en tættere kontakt med borgeren, uanset om det er som frontmedarbejder på jobcentre, sagsbehandler i et børn- og ungeteam eller andet.</p><p>Kvalifikationerne kan med fordel også benyttes i en ledelsesmæssig sammenhæng. Dette kan f.eks. være i forhold til at føle sig personligt rustet til kvalificering af medarbejdernes målsætninger, ”den svære samtale” om sygefravær, samarbejdsvanskeligheder eller misbrugsadfærd. Det kan også være kvalificering/specificering af ønsker om at avancere i egen karriere.</p><p>Vælger man at tage alle 4 år af uddannelsen på Copenhagen Coaching Center, vil man erhverve sig kvalifikationer til at arbejde som psykoterapeut på langt de fleste områder.</p>
             </div>
             <div class="col-12 col-md-6">
@@ -1684,6 +1684,7 @@
       
       document.querySelector('h1').innerText = value.title;
       document.getElementById("undertitle").innnerText = value.undertitle;
+      document.getElementById("kol-1").innnerText = value.kollonne-1;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');
