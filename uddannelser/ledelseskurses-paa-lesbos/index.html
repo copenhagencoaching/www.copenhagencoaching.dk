@@ -771,8 +771,11 @@
     <div class="small-container">
         <div id="overblik" class="anchor-delay"></div>
         <div class="row g-lg-5 g-3">
-            <div id="kol-1" data-cms-bind="#kol_one" class="col-12 col-md-6">
-                <h4>Hvorfor skal du vælge Ledelseskursus på Lesbos?</h4><p>Har du givet dig selv mulighed for at finde det der betyder mest for dig, når du leder? Ønsker du at kunne bevare overblikket og agere tydeligt. Oplever du at det kan være svært at udfordre med et åbent sind og samtidig skabe tryghed omkring dig? Synes du nogle gange det er svært at bevæge sig i det uforudsigelige eller medskabe noget gennem fællesskabets værdier? Nu har du muligheden for at tænke over det, mærke efter det og blive til det.</p><p>Tag med på denne opdagelsesrejse på den græske ø Lesbos sammen med andre ledere, erfarne rådgivere og konsulenter samt studerende fra vores toårige uddannelse, Master i Business Coaching.</p><p>Dette intense forløb skærper dine refleksioner over og fornemmelser for det der afgør dine handlinger i din ledelsespraksis. Med andre ord bliver du tydelig omkring dine grundværdier og dit råderum, når du leder.</p>
+            <div class="col-12 col-md-6">
+                <div id="kol-1" data-cms-bind="#kol_one">
+                    <h4>Hvorfor skal du vælge Ledelseskursus på Lesbos?</h4><p>Har du givet dig selv mulighed for at finde det der betyder mest for dig, når du leder? Ønsker du at kunne bevare overblikket og agere tydeligt. Oplever du at det kan være svært at udfordre med et åbent sind og samtidig skabe tryghed omkring dig? Synes du nogle gange det er svært at bevæge sig i det uforudsigelige eller medskabe noget gennem fællesskabets værdier? Nu har du muligheden for at tænke over det, mærke efter det og blive til det.</p><p>Tag med på denne opdagelsesrejse på den græske ø Lesbos sammen med andre ledere, erfarne rådgivere og konsulenter samt studerende fra vores toårige uddannelse, Master i Business Coaching.</p><p>Dette intense forløb skærper dine refleksioner over og fornemmelser for det der afgør dine handlinger i din ledelsespraksis. Med andre ord bliver du tydelig omkring dine grundværdier og dit råderum, når du leder.</p>
+                </div>
+                
             </div>
             <div class="col-12 col-md-6">
                 
@@ -1056,8 +1059,17 @@
 <div class="container-fluid py-5">
     <div class="small-container pt-3">
         <div class="row gx-5 gy-4">
-            <div class="col-12 col-md-6"><h4>Hvordan er uddannelsen bygget op?</h4><p>Turen til Lesbos handler først og fremmest om undervisning og træning. Alle dage har fastlagte destinationer og indlagte træningsseancer. Du bliver trænet, vejledt og udfordret undervejs. Arbejdet omkring værdier vil på turen ske igennem læren fra den filosofiske samtale, protreptikken.</p></div>
-            <div class="col-12 col-md-6"><p>Vi arbejder med protreptikken fra et nyt og moderne perspektiv, hvor der i høj grad er fokus på, hvordan du som leder kan fremstå oprigtig og imødekommende i din ledelse. Hele ugen bliver du præsenteret for teoretiske ståsteder der med grundig vejledning bliver omsat i din ledelsespraksis.</p></div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_one" id="#op-kol-1">
+                    <h4>Hvordan er uddannelsen bygget op?</h4><p>Turen til Lesbos handler først og fremmest om undervisning og træning. Alle dage har fastlagte destinationer og indlagte træningsseancer. Du bliver trænet, vejledt og udfordret undervejs. Arbejdet omkring værdier vil på turen ske igennem læren fra den filosofiske samtale, protreptikken.</p>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_two" id="#op-kol-2">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1884,6 +1896,8 @@
       document.querySelector('h3').innerText = value.undertitle;
       document.querySelector('#kol-1').innerHTML = value.kol_one;
       document.querySelector('#kol-2').innerHTML = value.kol_two;
+      document.querySelector('#op-kol-1').innerHTML = value.op_kol_one;
+      document.querySelector('#op-kol-2').innerHTML = value.op_kol_two;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');

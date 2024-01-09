@@ -771,8 +771,11 @@
     <div class="small-container">
         <div id="overblik" class="anchor-delay"></div>
         <div class="row g-lg-5 g-3">
-            <div id="kol-1" data-cms-bind="#kol_one" class="col-12 col-md-6">
-                <h4>Proceslederuddannelsen</h4><p>Proceslederuddannelsen er et særligt tilrettelagt og intensivt forløb, der består af to valgfag fra Diplomuddannelsen i Offentlig Ledelse (ialt 10 ECTS). De to valgfag er Ledelse & Coaching (5 ECTS) og Ledelse af Forandrings- og Udviklingsprocesser (5 ECTS). Det løber over knapt halvanden måned. Forløbet består af 1 internat/seminar, 3 online webinar á 3 timer, 1 dags undervisning, 1 hel gruppedag og to individuelle coachingsessioner. Herudover er deltagelse i to dages fælles eksamen med fokus på praktiske coachingfærdigheder, procesdesign og facilitering obligatorisk. Endvidere tilbydes alle deltagerne en BIG FIVE personlighedstest med en coachende tilbagemeldingssamtale. BIG FIVE er et af markedets bedst underbyggede personlighedstests til ledere.</p><h5>At samle organisationen</h5><p>Krav om konstant forandring, omorganisering, økonomisk pres m.v. skaber behov for professionel procesledelse. Proceslederuddannelsen giver dig et solidt fundament til at stå myndigt og dialogisk i ledelsesopgaven. Med de to moduler vil du kunne mestre den sunde og veldesignede proces, der giver dit og organisationens arbejde retning og mening. Du vil kunne samle organisationen, når der er behov for det, og inspirere til den gode idé eller den ekstra indsats. Du vil også blive klædt på til at se</p>
+            <div class="col-12 col-md-6">
+                <div id="kol-1" data-cms-bind="#kol_one">
+                    <h4>Proceslederuddannelsen</h4><p>Proceslederuddannelsen er et særligt tilrettelagt og intensivt forløb, der består af to valgfag fra Diplomuddannelsen i Offentlig Ledelse (ialt 10 ECTS). De to valgfag er Ledelse & Coaching (5 ECTS) og Ledelse af Forandrings- og Udviklingsprocesser (5 ECTS). Det løber over knapt halvanden måned. Forløbet består af 1 internat/seminar, 3 online webinar á 3 timer, 1 dags undervisning, 1 hel gruppedag og to individuelle coachingsessioner. Herudover er deltagelse i to dages fælles eksamen med fokus på praktiske coachingfærdigheder, procesdesign og facilitering obligatorisk. Endvidere tilbydes alle deltagerne en BIG FIVE personlighedstest med en coachende tilbagemeldingssamtale. BIG FIVE er et af markedets bedst underbyggede personlighedstests til ledere.</p><h5>At samle organisationen</h5><p>Krav om konstant forandring, omorganisering, økonomisk pres m.v. skaber behov for professionel procesledelse. Proceslederuddannelsen giver dig et solidt fundament til at stå myndigt og dialogisk i ledelsesopgaven. Med de to moduler vil du kunne mestre den sunde og veldesignede proces, der giver dit og organisationens arbejde retning og mening. Du vil kunne samle organisationen, når der er behov for det, og inspirere til den gode idé eller den ekstra indsats. Du vil også blive klædt på til at se</p>
+                </div>
+                
             </div>
             <div class="col-12 col-md-6">
                 
@@ -1176,8 +1179,17 @@
 <div class="container-fluid py-5">
     <div class="small-container pt-3">
         <div class="row gx-5 gy-4">
-            <div class="col-12 col-md-6"></div>
-            <div class="col-12 col-md-6"></div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_one" id="#op-kol-1">
+                    
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_two" id="#op-kol-2">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1986,6 +1998,8 @@
       document.querySelector('h3').innerText = value.undertitle;
       document.querySelector('#kol-1').innerHTML = value.kol_one;
       document.querySelector('#kol-2').innerHTML = value.kol_two;
+      document.querySelector('#op-kol-1').innerHTML = value.op_kol_one;
+      document.querySelector('#op-kol-2').innerHTML = value.op_kol_two;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');

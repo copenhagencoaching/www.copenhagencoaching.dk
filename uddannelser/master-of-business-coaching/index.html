@@ -773,8 +773,11 @@
     <div class="small-container">
         <div id="overblik" class="anchor-delay"></div>
         <div class="row g-lg-5 g-3">
-            <div id="kol-1" data-cms-bind="#kol_one" class="col-12 col-md-6">
-                <h4>Ledelse og coaching</h4><p>Ønsker du at blive dygtig til at føre produktive og virkningsfulde dialoger? At kunne flytte både grupper og individer i en mere konstruktiv retning og derved forebygge stress, organisatorisk stagnation og udbrændthed? Så vælg uddannelsen: MBC (Master of Business Coaching)</p><h4>Højeste internationale akkreditering</h4><p>Med en MBC får du en af landets bedste coachinguddannelser, hvor du både kan foretage traditionelle coachingsamtaler og den filosofiske samtale.</p><p>Med en MBC fra CCC er du garanteret de højeste, internationale standarder via vores akkreditering fra European Mentoring and Coaching Council (EMCC). <ins><a href="/emcc-akkreditering/">Læs om vores EMCC akkreditering her</a></ins>.</p>
+            <div class="col-12 col-md-6">
+                <div id="kol-1" data-cms-bind="#kol_one">
+                    <h4>Ledelse og coaching</h4><p>Ønsker du at blive dygtig til at føre produktive og virkningsfulde dialoger? At kunne flytte både grupper og individer i en mere konstruktiv retning og derved forebygge stress, organisatorisk stagnation og udbrændthed? Så vælg uddannelsen: MBC (Master of Business Coaching)</p><h4>Højeste internationale akkreditering</h4><p>Med en MBC får du en af landets bedste coachinguddannelser, hvor du både kan foretage traditionelle coachingsamtaler og den filosofiske samtale.</p><p>Med en MBC fra CCC er du garanteret de højeste, internationale standarder via vores akkreditering fra European Mentoring and Coaching Council (EMCC). <ins><a href="/emcc-akkreditering/">Læs om vores EMCC akkreditering her</a></ins>.</p>
+                </div>
+                
             </div>
             <div class="col-12 col-md-6">
                 
@@ -2626,8 +2629,17 @@
 <div class="container-fluid py-5">
     <div class="small-container pt-3">
         <div class="row gx-5 gy-4">
-            <div class="col-12 col-md-6"><h4>Hvordan er uddannelsen bygget op?</h4><p>Uddannelsen kombinerer et solidt teoretisk fundament med en målrettet træning og udvikling af den enkelte studerendes egen samtalepraksis.</p><p>Uddannelsen er normeret til et studieårsværk fordelt på fire semestre á et halvt å (15 ECTS), dvs. i alt to år og 60 ECTS. Hvert semester består af ti undervisningsdage fordelt over et halvt år samt fire træningsaftener (på tværs af semesterhold), hvoraf to aftener ligger i direkte forlængelse af undervisningen.</p><p>Hvert semester afsluttes med eksamen og et bevis på gennemførelse. Semestrene kan tages ét ad gangen og/eller forskudt, som det passer i den enkelte studerendes ressourcer og karrieremål. Hvis det måtte ønskes, kan der træffes individuel aftale om en ONLINE løsning.</p><p>Uddannelsen afsluttes med en masterafhandling og et mundtligt forsvar.</p></div>
-            <div class="col-12 col-md-6"><h4>Hvad får du ud af uddannelsen?</h4><p>På uddannelsen trænes du i at være nærværende og ansvarstagende også når vi sammen rammer de svære emner, og hvor du mest af alt har lyst til at afbryde samtalen.</p><p>På MBC'en er der derfor også fokus på din egen personlige udvikling og dannelse; hvem du selv er, og hvad netop du betyder for dialogen.</p><p>MBC'en gør den studerende i stand til at stå og indgå i mange forskellige situationer og samtaler, herunder team- og medarbejderudvikling, konflikt- og krisehåndtering, procesledelse og organisationsudvikling.</p></div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_one" id="#op-kol-1">
+                    <h4>Hvordan er uddannelsen bygget op?</h4><p>Uddannelsen kombinerer et solidt teoretisk fundament med en målrettet træning og udvikling af den enkelte studerendes egen samtalepraksis.</p><p>Uddannelsen er normeret til et studieårsværk fordelt på fire semestre á et halvt å (15 ECTS), dvs. i alt to år og 60 ECTS. Hvert semester består af ti undervisningsdage fordelt over et halvt år samt fire træningsaftener (på tværs af semesterhold), hvoraf to aftener ligger i direkte forlængelse af undervisningen.</p><p>Hvert semester afsluttes med eksamen og et bevis på gennemførelse. Semestrene kan tages ét ad gangen og/eller forskudt, som det passer i den enkelte studerendes ressourcer og karrieremål. Hvis det måtte ønskes, kan der træffes individuel aftale om en ONLINE løsning.</p><p>Uddannelsen afsluttes med en masterafhandling og et mundtligt forsvar.</p>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_two" id="#op-kol-2">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -3549,6 +3561,8 @@
       document.querySelector('h3').innerText = value.undertitle;
       document.querySelector('#kol-1').innerHTML = value.kol_one;
       document.querySelector('#kol-2').innerHTML = value.kol_two;
+      document.querySelector('#op-kol-1').innerHTML = value.op_kol_one;
+      document.querySelector('#op-kol-2').innerHTML = value.op_kol_two;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');

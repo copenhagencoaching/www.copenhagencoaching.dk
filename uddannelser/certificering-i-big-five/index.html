@@ -771,8 +771,11 @@
     <div class="small-container">
         <div id="overblik" class="anchor-delay"></div>
         <div class="row g-lg-5 g-3">
-            <div id="kol-1" data-cms-bind="#kol_one" class="col-12 col-md-6">
-                <h4>BIG FIVE personlighedstest</h4><p>BIG FIVE er en personlighedstest som bruges til rekruttering, ledelses- og medarbejderudvikling, konflikthåndtering, organisationsudvikling mv. Det er en test som måler fem basale personlighedstræk:</p><ul><li>Behov for stabilitet (N) Neuroticism</li><li>Udadvendthed (E) Extraversion</li><li>Åbenhed (O) Opennes</li><li>Imødekommenhed (A) Agreeableness</li><li>Samvittighedsfuldhed (C) Conscientiousnes</li></ul><p>Certificering i BIG FIVE er et redskab du kan bruge i dit arbejdsliv. Testen vil i dit professionelle virke kunne bruges i forbindelse med fx rekruttering og onboarding, talentudvikling, teamsammensætning- og udvikling, medarbejdersudvikling samt optimering af opgaveløsning og samarbejdesprocesser i organisationen. Derudover vil certificeringen give dig et indblik i dine egne personlighedstræk, fordi du selv vil blive testet i forbindelse med certificeringen. Testen giver et overblik over, hvor en person befinder sig i forhold til et empirisk gennemsnit af personligheder, ledsaget af en kort beskrivelse. Teorien om The Big Five er det stærkest teoretisk og empirisk underbyggede bud på en klassificering af menneskers personlighedstræk.</p><p>En Big Five personlighedsprofil kan sige noget om vores umiddelbare tilbøjeligheder, herunder, hvilke situationer og aktiviteter, der giver os energi, og hvilke der kræver en ekstra indsats og opmærksomhed.</p>
+            <div class="col-12 col-md-6">
+                <div id="kol-1" data-cms-bind="#kol_one">
+                    <h4>BIG FIVE personlighedstest</h4><p>BIG FIVE er en personlighedstest som bruges til rekruttering, ledelses- og medarbejderudvikling, konflikthåndtering, organisationsudvikling mv. Det er en test som måler fem basale personlighedstræk:</p><ul><li>Behov for stabilitet (N) Neuroticism</li><li>Udadvendthed (E) Extraversion</li><li>Åbenhed (O) Opennes</li><li>Imødekommenhed (A) Agreeableness</li><li>Samvittighedsfuldhed (C) Conscientiousnes</li></ul><p>Certificering i BIG FIVE er et redskab du kan bruge i dit arbejdsliv. Testen vil i dit professionelle virke kunne bruges i forbindelse med fx rekruttering og onboarding, talentudvikling, teamsammensætning- og udvikling, medarbejdersudvikling samt optimering af opgaveløsning og samarbejdesprocesser i organisationen. Derudover vil certificeringen give dig et indblik i dine egne personlighedstræk, fordi du selv vil blive testet i forbindelse med certificeringen. Testen giver et overblik over, hvor en person befinder sig i forhold til et empirisk gennemsnit af personligheder, ledsaget af en kort beskrivelse. Teorien om The Big Five er det stærkest teoretisk og empirisk underbyggede bud på en klassificering af menneskers personlighedstræk.</p><p>En Big Five personlighedsprofil kan sige noget om vores umiddelbare tilbøjeligheder, herunder, hvilke situationer og aktiviteter, der giver os energi, og hvilke der kræver en ekstra indsats og opmærksomhed.</p>
+                </div>
+                
             </div>
             <div class="col-12 col-md-6">
                 
@@ -1320,8 +1323,17 @@
 <div class="container-fluid py-5">
     <div class="small-container pt-3">
         <div class="row gx-5 gy-4">
-            <div class="col-12 col-md-6"><h4>Kursets opbygning</h4><p>Certificeringskurset er delt op i tre moduler og én eksamen.<br />Der er et introduktionsmodul, tre fagmoduler og et eksamensmodul. Introduktionsmodulet består af et webinar, hvor deltagerne møder underviser og hinanden online og blive informeret om kursets opbygning og forløb. Derefter følger der et fagmodul om BIG FIVE’s teoretiske fundament, som vil give en indsigt i historien og videnskabsteorien, som BIG FIVE bygger på.</p></div>
-            <div class="col-12 col-md-6"><p>Herefter et modul om hvordan testen konkret udføres, herunder testens formalia, hvordan man tolker testresultatet og hvordan man i tilbagemeldingssamtalen fører en etisk og konstruktiv dialog med testpersonen. Det sidste modul handler om brug af erhvervsrettet testning i arbejdslivet. Det giver en generel viden om psykometriske test, de givne retningslinjer for personlighedstestning, og hvordan man etisk anvender test i erhvervssammenhæng.</p><p>Den afsluttende eksamen er en praktisk, mundtlig eksamen i mindre grupper med individuel feedback.</p></div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_one" id="#op-kol-1">
+                    <h4>Kursets opbygning</h4><p>Certificeringskurset er delt op i tre moduler og én eksamen.<br />Der er et introduktionsmodul, tre fagmoduler og et eksamensmodul. Introduktionsmodulet består af et webinar, hvor deltagerne møder underviser og hinanden online og blive informeret om kursets opbygning og forløb. Derefter følger der et fagmodul om BIG FIVE’s teoretiske fundament, som vil give en indsigt i historien og videnskabsteorien, som BIG FIVE bygger på.</p>
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-6">
+                <div data-cms-bind="#op_kol_two" id="#op-kol-2">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -2116,6 +2128,8 @@
       document.querySelector('h3').innerText = value.undertitle;
       document.querySelector('#kol-1').innerHTML = value.kol_one;
       document.querySelector('#kol-2').innerHTML = value.kol_two;
+      document.querySelector('#op-kol-1').innerHTML = value.op_kol_one;
+      document.querySelector('#op-kol-2').innerHTML = value.op_kol_two;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');
