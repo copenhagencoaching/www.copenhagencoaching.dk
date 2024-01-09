@@ -795,7 +795,8 @@
                     <!-- AddToAny BEGIN -->
                 </div>
                 
-                <p>Hør i videoen hvad tidligere studerende Gitte Overgaard siger om uddannelsen. Med tryk på Business-delen af Coaching, i modsætning til fx life-coaching, er uddannelsen målrettet erhvervslivet med den hensigt at løfte de studerendes dialogiske kapacitet i professionelle kontekster.</p>
+                <div data-cms-bind="#kol_two" id="kol-2">
+                <p>Hør i videoen hvad tidligere studerende Gitte Overgaard siger om uddannelsen. Med tryk på Business-delen af Coaching, i modsætning til fx life-coaching, er uddannelsen målrettet erhvervslivet med den hensigt at løfte de studerendes dialogiske kapacitet i professionelle kontekster.</p></div>
             </div>
 
             
@@ -3547,6 +3548,7 @@
       document.querySelector('h1').innerText = value.title;
       document.querySelector('h3').innerText = value.undertitle;
       document.querySelector('#kol-1').innerHTML = value.kol_one;
+      document.querySelector('#kol-2').innerHTML = value.kol_two;
       
       // remove all list elements, then re-add them
       const staffList = document.querySelector('ul');
