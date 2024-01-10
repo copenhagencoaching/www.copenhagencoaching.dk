@@ -684,7 +684,31 @@
   </div> <!-- container-fluid.// -->
   </nav>
 
-  <div class="hero-image d-flex align-content-center align-items-center" style="background: linear-gradient(rgba(19, 19, 19, 0.7), rgba(19, 19, 19, 0.7)), url('/images/academy/den-offentlige-lederuddannelse.png'); background-size: cover; background-position: center;">
+  <header class="mt-5">
+    <img data-cms-bind="#image" src="/images/academy/den-offentlige-lederuddannelse.png" id="hero-image" alt="Five developers at work." />
+    <section class='hero-header-text w-100 text-center pt-5 mt-5'>
+        <div class="container-fluid text-center mt-5">
+
+            <h1 data-cms-bind="#title" class="text-white mb-1">Den offentlige lederuddannelse</h1>
+            
+    
+    
+    
+            <div class="row">
+                <div class="col-12 offset-lg-3 col-lg-6">
+                    <hr class="white short-hr mx-auto" />
+                </div>
+            </div>
+            
+            <a class="btn-slate-gray text-white btn w-254 btn-bold fs-6 h-50" href="#kontakt-underviseren">Kontakt
+                underviseren</a>
+        </div>
+     
+    </section>
+ </header>
+
+<!--  <div class="hero-image d-flex align-content-center align-items-center"
+    style="background: linear-gradient(rgba(19, 19, 19, 0.7), rgba(19, 19, 19, 0.7)), url('/images/academy/den-offentlige-lederuddannelse.png'); background-size: cover; background-position: center;">
 
     <div class="container-fluid text-center">
 
@@ -703,7 +727,7 @@
             underviseren</a>
     </div>
 
-</div>
+  -->
 
 <div class="container-fluid my-5" style="z-index: 1100;">
     <div class="small-container">
@@ -2229,17 +2253,13 @@
       
       document.querySelector('h1').innerText = value.title;
 
-      var vids = document.querySelector('#video-kol-2')
-// vids is an HTMLCollection
-for( var i = 0; i < vids.length; i++ ){ 
-    console.log( vids.item(i).src )
-}
-
       
       if (document.querySelector('h3') != null) {
         document.querySelector('h3').innerText = value.undertitle;
       }
       document.querySelector('#kol-1').innerHTML = value.kol_one;
+
+      document.querySelector('#hero-image').src = value.image;
 
       if (document.querySelector('#kol-2') != null) {
         document.querySelector('#kol-2').innerHTML = value.kol_two;
@@ -2257,7 +2277,6 @@ for( var i = 0; i < vids.length; i++ ){
 
       if (document.querySelector('#video-kol-2') != null) {
         document.querySelector('#video-kol-2').src = value.kol_two_video_url;
-        console.log("there is a video");
       }
       
       
